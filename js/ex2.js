@@ -14,26 +14,23 @@ const countryList = [
     "Autria",
     "Azerbaïjan"
 ];
-countrySugg = document.createElement("cs");
-countrySugg.id = "countrySugg"
-document.getElementById("sugg").appendChild(countrySugg);
 
+document.getElementById("country").addEventListener("input", e => {
+    const matcgArray = countryList.filter(country => country.toLowerCase().startswith(e.target.value.toLowerCase())); 
+    const suggestionElement = document.getElementById("suggestions");
 
-document.getElementById("country").addEventListener("input", (e) => {
+    suggestionElement.InnerHTML = "";
 
-    let countryArray = [];
-    let userInput = e.target.value;
+    if (e.target.value.length > 0) {
+        matchArray.foreach(country => {
+        const countrySugg = document.createElement("div");
+        countrySugg.textContent = country;
+        countrySugg.classList = "suggestion";
+        suggestionElement.addEventListener("click", esugg => {
+            e.target.value = esugg.target.textContent;
+        });
+        suggestionElement.appendChild(countrySugg);
+        });
+    };
+});
 
-    if (e.target.value) {
-        countryNameArray = countryList.filter(country => country.toLowerCase().includes(userInput.toLowerCase()));
-        countryNameArray = countryNameArray.map(country => `<li>${country}<li>`)
-    }
-
-    showCountryNameArray(countryNameArray);
-
-})
-
-function showCountryNameArray(countryNameArray) {
-    const scriptHtml = !countryNameArray.length ? "" : countryNameArray.join("");
-    document.querySelector("cs").innerHTML = scriptHtml;
-}
