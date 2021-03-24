@@ -16,7 +16,7 @@ const countryList = [
 ];
 
 document.getElementById("country").addEventListener("input", e => {
-    const matcgArray = countryList.filter(country => country.toLowerCase().startswith(e.target.value.toLowerCase())); 
+    const matchArray = countryList.filter(country => country.toLowerCase().startswith(e.target.value.toLowerCase())); 
     const suggestionElement = document.getElementById("suggestions");
 
     suggestionElement.InnerHTML = "";
