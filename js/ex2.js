@@ -34,15 +34,4 @@ document.getElementById("country").addEventListener("input", e => {
     };
 });
 
-document.addEventListener("change", e => {
-    const ulCharacters = document.getElementById("characters");
-    ulCharacters.InnerHTML = "";
-
-    const characters = getCharacters(e.target.value);
-    character.forEach(char => {
-        const liChar = document.createElement("li");
-        liChar.textContent.Content = char;
-        document.getElementById("characters").appendChild(liChar);
-    });
-});
 
