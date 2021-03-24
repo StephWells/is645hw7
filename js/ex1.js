@@ -31,6 +31,7 @@ const getCharacters = houseCode => {
         default:
             return []; //Empty array
     }
+}
 
 const houseDDL = document.getElementById("house");
 
@@ -49,7 +50,7 @@ document.addEventListener("change", e => {
     character.forEach(char => {
         const liChar = document.createElement("li");
         liChar.textContent.Content = char;
-        document.getElementById("characters").appendChild(liChar);
+        ulCharacters.appendChild(liChar);
     });
 });
 
